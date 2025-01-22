@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Caveat', serif;
+  overflow: hidden;
+  background-color: rgb(38, 38, 38);
+}
+
+.Container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Picture {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #fff;
+  border-radius: 3px;
+  background: #ffcccc;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  user-select: none;
+  cursor: pointer;
+  margin-left: 50%;
+  margin-top: 25%;
+}
+
+.Picture-video {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  user-select: none;
+  cursor: pointer;
+}
+
+.Picture-img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
+
+.Picture-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 70px;
+  padding: 12px 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.Network {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.Network img {
+  width: 1.5rem;
+  aspect-ratio: 1 / 1;
+  vertical-align: middle;
+}
+
+/* Snowflake style */
+.snowflake {
+  margin-top: -20px;
+  position: absolute;
+  color: rgb(105, 200, 255);
+  font-size: 20px; /* Default size, will be overridden by JavaScript */
+  pointer-events: none; /* Prevent interaction with snowflakes */
+  user-select: none; /* Prevent text selection */
+  z-index: 9999; /* Ensure snowflakes are above other elements */
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px); /* Start above the screen */
+  }
+  100% {
+    transform: translateY(calc(100vh + 50px)); /* Fall to the bottom of the screen */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    transform: scale(1.5);  /* Scale the body content to 150% */
+    transform-origin: top left; /* Ensure the zoom starts from the top left corner */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    transform: scale(1.5);  /* Scale the body content to 150% */
+    transform-origin: top left; /* Ensure the zoom starts from the top left corner */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    position: absolute;
+  }
+}
